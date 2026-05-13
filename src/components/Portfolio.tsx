@@ -321,12 +321,24 @@ function Services() {
         style={{ filter: "saturate(0)", opacity: 0.35 }}
       />
       <div className="relative z-10">
-        <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+        <motion.span
+          initial={{ opacity: 0, x: -15 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+        >
           What I do
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-10 sm:mb-14 max-w-3xl">
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-10 sm:mb-14 max-w-3xl"
+        >
           Services built for momentum.
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {SERVICES.map(({ Icon, title, desc }, i) => (
             <motion.div
