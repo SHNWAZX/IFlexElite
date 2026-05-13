@@ -15,6 +15,7 @@ import {
 import HlsVideo from "./HlsVideo";
 import BlurText from "./BlurText";
 import AnimatedCursor from "./AnimatedCursor";
+import CopyGuard from "./CopyGuard";
 
 const NAV = [
   { id: "work", label: "Work" },
@@ -704,6 +705,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-black text-white font-body antialiased">
       <AnimatedCursor />
+      <CopyGuard />
       <Nav />
       <main>
         <Hero />
