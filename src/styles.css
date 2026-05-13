@@ -238,17 +238,8 @@ input, textarea, [contenteditable="true"] {
 img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
 a img, button img { pointer-events: auto; }
 
-@keyframes logo-spin {
-  to { transform: rotate(360deg); }
+@keyframes logo-shine {
+  0% { transform: translateX(0) skewX(-12deg); }
+  60%, 100% { transform: translateX(400%) skewX(-12deg); }
 }
-@keyframes logo-pulse {
-  0%, 100% { opacity: 0.35; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.15); }
-}
-@keyframes logo-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-1.5px); }
-}
-.animate-logo-spin { animation: logo-spin 8s linear infinite; }
-.animate-logo-pulse { animation: logo-pulse 2.6s ease-in-out infinite; }
-.animate-logo-float { animation: logo-float 3.2s ease-in-out infinite; }
+.animate-logo-shine { animation: logo-shine 3.5s ease-in-out infinite; }
