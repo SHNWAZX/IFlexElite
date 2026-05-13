@@ -111,7 +111,7 @@ function Hero() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260411_104229_49794008-3d16-4cb6-9a8c-73d7751b0e79.mp4"
+        src="/videos/hero.mp4"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
       <div className="relative z-10 min-h-[100svh] flex flex-col justify-end px-5 sm:px-8 lg:px-16 pb-20 pt-32">
