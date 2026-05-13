@@ -25,6 +25,7 @@ export default function AnimatedCursor() {
     let raf = 0;
     let lastFrameSwap = performance.now();
     let frame = 0;
+    let lastTs = performance.now();
 
     const move = (e: PointerEvent) => {
       tx = e.clientX;
@@ -32,13 +33,16 @@ export default function AnimatedCursor() {
     };
 
     const tick = (now: number) => {
-      // smooth follow
-      cx += (tx - cx) * 0.35;
-      cy += (ty - cy) * 0.35;
-      wrap.style.transform = `translate3d(${cx - 16}px, ${cy - 16}px, 0)`;
+      // frame-rate independent smoothing (~exponential ease)
+      const dt = Math.min(64, now - lastTs);
+      lastTs = now;
+      const t = 1 - Math.exp(-dt / 55); // smooth, lag-free follow
+      cx += (tx - cx) * t;
+      cy += (ty - cy) * t;
+      wrap.style.transform = `translate3d(${Math.round(cx) - 16}px, ${Math.round(cy) - 16}px, 0)`;
 
-      // cycle frame every 110ms via class toggle (no React re-render)
-      if (now - lastFrameSwap > 110) {
+      // cycle frame every 130ms via direct DOM (no React re-render)
+      if (now - lastFrameSwap > 130) {
         const next = (frame + 1) % FRAMES.length;
         const prev = imgRefs.current[frame];
         const cur = imgRefs.current[next];
@@ -77,7 +81,7 @@ export default function AnimatedCursor() {
           alt=""
           draggable={false}
           className="absolute inset-0 w-full h-full select-none"
-          style={{ opacity: i === 0 ? 1 : 0, transition: "opacity 60ms linear" }}
+          style={{ opacity: i === 0 ? 1 : 0 }}
         />
       ))}
     </div>
