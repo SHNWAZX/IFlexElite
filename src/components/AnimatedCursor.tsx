@@ -10,7 +10,8 @@ export default function AnimatedCursor() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const fine = window.matchMedia("(pointer: fine)").matches;
-    if (!fine) return;
+    const wide = window.matchMedia("(min-width: 768px)").matches;
+    if (!fine || !wide) return;
     setEnabled(true);
     document.documentElement.classList.add("custom-cursor");
 
