@@ -277,8 +277,12 @@ function Work() {
               <p className="text-sm font-body font-light text-white/45 leading-relaxed">
                 {p.body}
               </p>
-              <div className="mt-5 inline-flex items-center gap-1.5 text-white/70 text-xs font-body">
-                Read case study <ArrowUpRight className="w-3.5 h-3.5" />
+              <div className="mt-5 inline-flex items-center gap-1.5 text-white/70 text-xs font-body tracking-wider uppercase relative w-fit">
+                <span className="relative">
+                  Skills
+                  <span className="absolute left-0 -bottom-0.5 h-px w-full bg-white/70 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
+                </span>
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" />
               </div>
             </div>
           </motion.article>
