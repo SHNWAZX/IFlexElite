@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Github, Instagram, Twitter } from "lucide-react";
 
 export default function CtaSlide() {
   return (
@@ -61,18 +61,47 @@ export default function CtaSlide() {
             className="liquid-glass rounded-2xl p-8 lg:p-10 w-full max-w-xs"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center">
-                <Mail className="w-4 h-4 text-white" />
+              <img
+                src="https://avatars.githubusercontent.com/u/190835907?v=4"
+                alt="IFlexElite"
+                className="w-10 h-10 rounded-full object-cover ring-1 ring-white/20"
+              />
+              <div>
+                <div className="text-white font-body text-sm font-medium">IFlexElite</div>
+                <div className="text-white/40 text-[11px] font-body">Web Developer & UX Strategist</div>
               </div>
-              <span className="text-white font-body text-sm font-medium">Get in touch</span>
             </div>
-            <div className="space-y-2 mb-4">
-              <div className="text-white/70 text-sm font-body">hello@studio.ai</div>
-              <div className="text-white/70 text-sm font-body">+1 (555) 000-0000</div>
+            <div className="space-y-3 mb-4">
+              <a
+                href="https://github.com/IFlexElite"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white text-sm font-body transition"
+              >
+                <Github className="w-3.5 h-3.5" />
+                github.com/IFlexElite
+              </a>
+              <a
+                href="https://x.com/IFlexElite"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white text-sm font-body transition"
+              >
+                <Twitter className="w-3.5 h-3.5" />
+                @IFlexElite
+              </a>
+              <a
+                href="https://instagram.com/iflexelite"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 text-white/70 hover:text-white text-sm font-body transition"
+              >
+                <Instagram className="w-3.5 h-3.5" />
+                @iflexelite
+              </a>
             </div>
-            <div className="pt-4 border-t border-white/10 space-y-1">
-              <div className="text-white/30 text-xs font-body">San Francisco, CA</div>
-              <div className="text-white/30 text-xs font-body">London, UK</div>
+            <div className="pt-4 border-t border-white/10">
+              <div className="text-white/30 text-xs font-body">Crafting interfaces, worldwide.</div>
             </div>
           </motion.div>
         </div>
@@ -82,7 +111,7 @@ export default function CtaSlide() {
           transition={{ delay: 1.0 }}
           className="flex justify-between border-t border-white/10 pt-4"
         >
-          <span className="text-white/30 text-xs font-body">© 2026 Studio. All rights reserved.</span>
+          <span className="text-white/30 text-xs font-body">© 2026 IFlexElite · Studio. All rights reserved.</span>
           <div className="flex items-center gap-6">
             <a className="text-white/30 text-xs hover:text-white/60 font-body" href="#">Privacy</a>
             <a className="text-white/30 text-xs hover:text-white/60 font-body" href="#">Terms</a>
