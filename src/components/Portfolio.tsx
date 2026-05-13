@@ -42,10 +42,17 @@ function Nav() {
       }`}
     >
       <div className="px-5 sm:px-8 lg:px-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-            <span className="font-heading italic text-sm text-black">E</span>
-          </div>
+        <a href="#top" className="flex items-center gap-2 group">
+          <span className="relative inline-flex w-9 h-9 items-center justify-center">
+            <span className="absolute inset-0 rounded-full bg-white/10 blur-md animate-logo-pulse" />
+            <span className="absolute inset-0 rounded-full border border-white/30 animate-logo-spin" />
+            <img
+              src="/logo-e.png"
+              alt="IFlexElite logo"
+              className="relative w-8 h-8 rounded-full object-cover transition-transform duration-500 group-hover:scale-110 animate-logo-float"
+              draggable={false}
+            />
+          </span>
           <span className="font-heading italic text-white text-base sm:text-lg">
             IFlexElite
           </span>
