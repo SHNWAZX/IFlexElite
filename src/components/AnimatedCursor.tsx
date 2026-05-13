@@ -13,10 +13,11 @@ export default function AnimatedCursor() {
     const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
     if (!fine || !wide || touch) return;
 
-    document.documentElement.classList.add("custom-cursor");
     const wrap = wrapRef.current;
     if (!wrap) return;
+    document.documentElement.classList.add("custom-cursor");
     wrap.style.display = "block";
+    wrap.style.pointerEvents = "none";
 
     let tx = window.innerWidth / 2;
     let ty = window.innerHeight / 2;
@@ -32,11 +33,19 @@ export default function AnimatedCursor() {
       ty = e.clientY;
     };
 
+    const syncToPointer = (e: PointerEvent) => {
+      tx = e.clientX;
+      ty = e.clientY;
+      cx = tx;
+      cy = ty;
+      wrap.style.transform = `translate3d(${Math.round(cx) - 16}px, ${Math.round(cy) - 16}px, 0)`;
+    };
+
     const tick = (now: number) => {
       // frame-rate independent smoothing (~exponential ease)
       const dt = Math.min(64, now - lastTs);
       lastTs = now;
-      const t = 1 - Math.exp(-dt / 55); // smooth, lag-free follow
+      const t = 1 - Math.exp(-dt / 32); // smooth follow without click-position lag
       cx += (tx - cx) * t;
       cy += (ty - cy) * t;
       wrap.style.transform = `translate3d(${Math.round(cx) - 16}px, ${Math.round(cy) - 16}px, 0)`;
@@ -55,10 +64,12 @@ export default function AnimatedCursor() {
     };
 
     window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("pointerdown", syncToPointer, { passive: true });
     raf = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerdown", syncToPointer);
       cancelAnimationFrame(raf);
       document.documentElement.classList.remove("custom-cursor");
       if (wrap) wrap.style.display = "none";
@@ -70,6 +81,7 @@ export default function AnimatedCursor() {
       ref={wrapRef}
       aria-hidden
       className="pointer-events-none fixed left-0 top-0 z-[9999] w-8 h-8 will-change-transform hidden"
+      style={{ pointerEvents: "none" }}
     >
       {FRAMES.map((src, i) => (
         <img
@@ -81,7 +93,7 @@ export default function AnimatedCursor() {
           alt=""
           draggable={false}
           className="absolute inset-0 w-full h-full select-none"
-          style={{ opacity: i === 0 ? 1 : 0 }}
+          style={{ opacity: i === 0 ? 1 : 0, pointerEvents: "none" }}
         />
       ))}
     </div>
