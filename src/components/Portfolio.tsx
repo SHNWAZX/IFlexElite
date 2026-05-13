@@ -459,12 +459,24 @@ const TESTIMONIALS = [
 function Testimonials() {
   return (
     <section className="relative bg-black py-20 sm:py-28 px-5 sm:px-8 lg:px-16">
-      <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+      <motion.span
+        initial={{ opacity: 0, x: -15 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+        className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+      >
         Kind words
-      </span>
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl">
+      </motion.span>
+      <motion.h2
+        initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl"
+      >
         Trusted by teams who care about details.
-      </h2>
+      </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
         {TESTIMONIALS.map((t, i) => (
           <motion.div
