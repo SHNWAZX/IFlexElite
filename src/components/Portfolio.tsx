@@ -448,23 +448,23 @@ const TESTIMONIALS = [
   {
     quote:
       "A complete rebuild in five days. The result outperformed everything we'd spent months on before.",
-    name: "Sarah Chen",
+    name: "Priya Sharma",
     role: "CEO, Luminary",
-    initials: "SC",
+    initials: "PS",
   },
   {
     quote:
       "Conversions up 4x. The design just works differently when it's built on real data.",
-    name: "Marcus Webb",
+    name: "Ananya Iyer",
     role: "Head of Growth, Arcline",
-    initials: "MW",
+    initials: "AI",
   },
   {
     quote:
       "Didn't just design our site — defined our brand. World-class doesn't begin to cover it.",
-    name: "Elena Voss",
+    name: "Meera Kapoor",
     role: "Brand Director, Helix",
-    initials: "EV",
+    initials: "MK",
   },
 ];
 
