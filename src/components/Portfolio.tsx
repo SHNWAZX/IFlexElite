@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import HlsVideo from "./HlsVideo";
 import BlurText from "./BlurText";
-import robotImg from "@/assets/robot.png";
 
 const NAV = [
   { id: "work", label: "Work" },
