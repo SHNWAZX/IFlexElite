@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import HlsVideo from "./HlsVideo";
 import BlurText from "./BlurText";
+import AnimatedCursor from "./AnimatedCursor";
 
 const NAV = [
   { id: "work", label: "Work" },
@@ -702,6 +703,7 @@ function Footer() {
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-black text-white font-body antialiased">
+      <AnimatedCursor />
       <Nav />
       <main>
         <Hero />
