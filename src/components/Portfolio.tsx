@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import HlsVideo from "./HlsVideo";
 import BlurText from "./BlurText";
+import robotImg from "@/assets/robot.png";
 
 const NAV = [
   { id: "work", label: "Work" },
@@ -700,6 +701,123 @@ function Footer() {
 }
 
 export default function Portfolio() {
+  return _Portfolio();
+}
+
+function RobotPlayground() {
+  const areaRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = areaRef.current;
+    if (!el) return;
+    const handle = (e: PointerEvent) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      setPos({ x, y });
+      setActive(true);
+    };
+    const leave = () => setActive(false);
+    el.addEventListener("pointermove", handle);
+    el.addEventListener("pointerleave", leave);
+    return () => {
+      el.removeEventListener("pointermove", handle);
+      el.removeEventListener("pointerleave", leave);
+    };
+  }, []);
+
+  // Clamp robot travel to a fraction of the area
+  const tx = pos.x * 0.35;
+  const ty = pos.y * 0.25;
+  const rot = pos.x * 0.02;
+
+  return (
+    <section className="relative bg-black py-20 sm:py-28 px-5 sm:px-8 lg:px-16">
+      <div className="max-w-6xl mx-auto">
+        <motion.span
+          initial={{ opacity: 0, x: -15 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+        >
+          Playground
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9] mb-10"
+        >
+          Move your cursor.
+        </motion.h2>
+
+        <div
+          ref={areaRef}
+          className="relative w-full aspect-[16/10] sm:aspect-[2/1] rounded-3xl overflow-hidden liquid-glass cursor-none"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 60%, rgba(80,120,255,0.25), rgba(0,0,0,0.95) 70%)",
+          }}
+        >
+          {/* grid backdrop */}
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+
+          {/* glow that follows pointer */}
+          <motion.div
+            animate={{ x: pos.x, y: pos.y, opacity: active ? 0.6 : 0 }}
+            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            className="absolute left-1/2 top-1/2 w-72 h-72 -ml-36 -mt-36 rounded-full pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(120,180,255,0.5) 0%, transparent 70%)",
+              filter: "blur(20px)",
+            }}
+          />
+
+          {/* robot */}
+          <motion.div
+            animate={{ x: tx, y: ty, rotate: rot }}
+            transition={{ type: "spring", stiffness: 80, damping: 14, mass: 0.8 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          >
+            <motion.img
+              src={robotImg}
+              alt="Robot follower"
+              draggable={false}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="w-40 sm:w-56 md:w-64 select-none drop-shadow-[0_30px_60px_rgba(80,120,255,0.4)]"
+            />
+          </motion.div>
+
+          {/* custom cursor dot */}
+          <motion.div
+            animate={{ x: pos.x, y: pos.y, opacity: active ? 1 : 0 }}
+            transition={{ type: "spring", stiffness: 500, damping: 35 }}
+            className="absolute left-1/2 top-1/2 -ml-1.5 -mt-1.5 w-3 h-3 rounded-full bg-white pointer-events-none mix-blend-difference"
+          />
+
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/40 text-[10px] tracking-[0.3em] uppercase font-body">
+            Hover to interact
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function _Portfolio() {
   return (
     <div className="min-h-screen bg-black text-white font-body antialiased">
       <Nav />
@@ -708,6 +826,7 @@ export default function Portfolio() {
         <Work />
         <Services />
         <Stats />
+        <RobotPlayground />
         <Testimonials />
         <Contact />
       </main>
