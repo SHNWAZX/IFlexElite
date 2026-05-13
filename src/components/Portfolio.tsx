@@ -534,17 +534,41 @@ function Contact() {
       <div className="absolute inset-0 bg-black/55" />
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
-          <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-4">
+          <motion.span
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-4"
+          >
             Let's talk
-          </span>
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading italic text-white leading-[0.9] tracking-tight mb-5 whitespace-pre-line">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+            className="text-4xl sm:text-6xl lg:text-7xl font-heading italic text-white leading-[0.9] tracking-tight mb-5 whitespace-pre-line"
+          >
             {"Your next website\nstarts here."}
-          </h2>
-          <p className="text-white/55 font-body font-light text-sm sm:text-base leading-relaxed max-w-md mb-8">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-white/55 font-body font-light text-sm sm:text-base leading-relaxed max-w-md mb-8"
+          >
             Tell me about the project. I'll get back within 24 hours with a clear
             plan, timeline, and price.
-          </p>
-          <div className="flex items-center gap-3 flex-wrap">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex items-center gap-3 flex-wrap"
+          >
             <a
               href="https://github.com/IFlexElite"
               target="_blank"
@@ -561,10 +585,16 @@ function Contact() {
             >
               <Github className="w-4 h-4" /> GitHub
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="liquid-glass rounded-2xl p-7 sm:p-9">
+        <motion.div
+          initial={{ opacity: 0, x: 30, scale: 0.97 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          className="liquid-glass rounded-2xl p-7 sm:p-9"
+        >
           <div className="flex items-center gap-3 mb-6">
             <img
               src="https://avatars.githubusercontent.com/u/190835907?v=4"
@@ -615,7 +645,7 @@ function Contact() {
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
