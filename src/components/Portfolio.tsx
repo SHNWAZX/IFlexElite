@@ -209,12 +209,24 @@ function Work() {
     >
       <div className="flex items-end justify-between mb-10 sm:mb-14">
         <div>
-          <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+          <motion.span
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+          >
             Selected Work
-          </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9]">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9]"
+          >
             Projects, in motion.
-          </h2>
+          </motion.h2>
         </div>
         <a
           href="https://github.com/IFlexElite"
@@ -234,13 +246,13 @@ function Work() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="liquid-glass rounded-2xl overflow-hidden flex flex-col"
+            className="liquid-glass rounded-2xl overflow-hidden flex flex-col group transition-transform duration-500 hover:-translate-y-1"
           >
             <div className="h-52 sm:h-64 relative overflow-hidden">
               {p.hls ? (
                 <HlsVideo
                   src={p.videoSrc}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
                 />
               ) : (
                 <video
@@ -248,7 +260,7 @@ function Work() {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
                   src={p.videoSrc}
                 />
               )}
@@ -309,12 +321,24 @@ function Services() {
         style={{ filter: "saturate(0)", opacity: 0.35 }}
       />
       <div className="relative z-10">
-        <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+        <motion.span
+          initial={{ opacity: 0, x: -15 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+        >
           What I do
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-10 sm:mb-14 max-w-3xl">
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9] mb-10 sm:mb-14 max-w-3xl"
+        >
           Services built for momentum.
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {SERVICES.map(({ Icon, title, desc }, i) => (
             <motion.div
@@ -323,11 +347,15 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="liquid-glass rounded-2xl p-6 sm:p-8 flex flex-col"
+            className="liquid-glass rounded-2xl p-6 sm:p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1"
             >
-              <div className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center mb-5">
-                <Icon className="w-4 h-4 text-white" />
-              </div>
+            <motion.div
+              whileHover={{ rotate: 12, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center mb-5"
+            >
+              <Icon className="w-4 h-4 text-white" />
+            </motion.div>
               <h3 className="text-base sm:text-lg font-body font-semibold text-white mb-2">
                 {title}
               </h3>
@@ -365,12 +393,24 @@ function Stats() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
       <div className="relative z-10">
-        <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+        <motion.span
+          initial={{ opacity: 0, x: -15 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+        >
           About
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl">
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl"
+        >
           Independent designer & developer with a bias for craft and speed.
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
           {STATS.map((s, i) => (
@@ -423,12 +463,24 @@ const TESTIMONIALS = [
 function Testimonials() {
   return (
     <section className="relative bg-black py-20 sm:py-28 px-5 sm:px-8 lg:px-16">
-      <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+      <motion.span
+        initial={{ opacity: 0, x: -15 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5 }}
+        className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+      >
         Kind words
-      </span>
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl">
+      </motion.span>
+      <motion.h2
+        initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl"
+      >
         Trusted by teams who care about details.
-      </h2>
+      </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
         {TESTIMONIALS.map((t, i) => (
           <motion.div
@@ -486,17 +538,41 @@ function Contact() {
       <div className="absolute inset-0 bg-black/55" />
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
-          <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-4">
+          <motion.span
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-4"
+          >
             Let's talk
-          </span>
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading italic text-white leading-[0.9] tracking-tight mb-5 whitespace-pre-line">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+            className="text-4xl sm:text-6xl lg:text-7xl font-heading italic text-white leading-[0.9] tracking-tight mb-5 whitespace-pre-line"
+          >
             {"Your next website\nstarts here."}
-          </h2>
-          <p className="text-white/55 font-body font-light text-sm sm:text-base leading-relaxed max-w-md mb-8">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-white/55 font-body font-light text-sm sm:text-base leading-relaxed max-w-md mb-8"
+          >
             Tell me about the project. I'll get back within 24 hours with a clear
             plan, timeline, and price.
-          </p>
-          <div className="flex items-center gap-3 flex-wrap">
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex items-center gap-3 flex-wrap"
+          >
             <a
               href="https://github.com/IFlexElite"
               target="_blank"
@@ -513,10 +589,16 @@ function Contact() {
             >
               <Github className="w-4 h-4" /> GitHub
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="liquid-glass rounded-2xl p-7 sm:p-9">
+        <motion.div
+          initial={{ opacity: 0, x: 30, scale: 0.97 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          className="liquid-glass rounded-2xl p-7 sm:p-9"
+        >
           <div className="flex items-center gap-3 mb-6">
             <img
               src="https://avatars.githubusercontent.com/u/190835907?v=4"
@@ -567,7 +649,7 @@ function Contact() {
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -575,7 +657,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="bg-black px-5 sm:px-8 lg:px-16 py-8 border-t border-white/10">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-black px-5 sm:px-8 lg:px-16 py-8 border-t border-white/10"
+    >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <span className="text-white/30 text-xs font-body">
           © 2026 IFlexElite. All rights reserved.
@@ -601,7 +689,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
