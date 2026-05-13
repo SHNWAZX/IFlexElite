@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import HlsVideo from "./HlsVideo";
 import BlurText from "./BlurText";
+import robotImg from "@/assets/robot.png";
 
 const NAV = [
   { id: "work", label: "Work" },
@@ -708,6 +709,7 @@ export default function Portfolio() {
         <Work />
         <Services />
         <Stats />
+        <RobotPlayground />
         <Testimonials />
         <Contact />
       </main>
