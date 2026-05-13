@@ -47,7 +47,7 @@ function Nav() {
             src="/logo-e.png"
             alt="IFlexElite logo"
             draggable={false}
-            className="w-8 h-8 rounded-full object-cover bg-white"
+            className="w-8 h-8 object-contain"
           />
           <span className="font-heading italic text-white text-base sm:text-lg">
             IFlexElite
