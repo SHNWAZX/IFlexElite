@@ -37,7 +37,7 @@ export default function StatsSlide() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ filter: "saturate(0)" }}
       />
-      <div className="relative z-10 h-full flex flex-col px-10 lg:px-20 py-12 pb-20 overflow-y-auto">
+      <div className="relative z-10 h-full flex flex-col px-10 lg:px-20 py-12 pb-20">
         <div className="mb-auto">
           <motion.span
             initial={{ opacity: 0, x: -15 }}
