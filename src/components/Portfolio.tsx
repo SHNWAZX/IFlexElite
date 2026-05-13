@@ -209,12 +209,24 @@ function Work() {
     >
       <div className="flex items-end justify-between mb-10 sm:mb-14">
         <div>
-          <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+          <motion.span
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+          >
             Selected Work
-          </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9]">
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            className="text-3xl sm:text-5xl lg:text-7xl font-heading italic text-white tracking-tight leading-[0.9]"
+          >
             Projects, in motion.
-          </h2>
+          </motion.h2>
         </div>
         <a
           href="https://github.com/IFlexElite"
