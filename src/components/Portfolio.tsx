@@ -246,13 +246,13 @@ function Work() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: i * 0.08 }}
-            className="liquid-glass rounded-2xl overflow-hidden flex flex-col"
+            className="liquid-glass rounded-2xl overflow-hidden flex flex-col group transition-transform duration-500 hover:-translate-y-1"
           >
             <div className="h-52 sm:h-64 relative overflow-hidden">
               {p.hls ? (
                 <HlsVideo
                   src={p.videoSrc}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
                 />
               ) : (
                 <video
@@ -260,7 +260,7 @@ function Work() {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
                   src={p.videoSrc}
                 />
               )}
