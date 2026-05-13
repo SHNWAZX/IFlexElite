@@ -657,7 +657,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="bg-black px-5 sm:px-8 lg:px-16 py-8 border-t border-white/10">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="bg-black px-5 sm:px-8 lg:px-16 py-8 border-t border-white/10"
+    >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <span className="text-white/30 text-xs font-body">
           © 2026 IFlexElite. All rights reserved.
@@ -683,7 +689,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
