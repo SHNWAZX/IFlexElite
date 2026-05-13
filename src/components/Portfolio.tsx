@@ -152,7 +152,9 @@ function Hero() {
           className="flex items-center gap-3 flex-wrap"
         >
           <a
-            href="#work"
+            href="https://github.com/IFlexElite?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white text-black rounded-full px-5 py-3 text-sm font-body font-semibold inline-flex items-center gap-2"
           >
             View work <ArrowUpRight className="w-4 h-4" />
