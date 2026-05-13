@@ -389,12 +389,24 @@ function Stats() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
       <div className="relative z-10">
-        <span className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3">
+        <motion.span
+          initial={{ opacity: 0, x: -15 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+          className="block text-white/30 font-body text-[10px] tracking-[0.3em] uppercase mb-3"
+        >
           About
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl">
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl"
+        >
           Independent designer & developer with a bias for craft and speed.
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
           {STATS.map((s, i) => (
