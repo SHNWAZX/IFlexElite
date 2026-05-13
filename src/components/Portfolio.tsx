@@ -347,11 +347,15 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="liquid-glass rounded-2xl p-6 sm:p-8 flex flex-col"
+            className="liquid-glass rounded-2xl p-6 sm:p-8 flex flex-col transition-transform duration-500 hover:-translate-y-1"
             >
-              <div className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center mb-5">
-                <Icon className="w-4 h-4 text-white" />
-              </div>
+            <motion.div
+              whileHover={{ rotate: 12, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center mb-5"
+            >
+              <Icon className="w-4 h-4 text-white" />
+            </motion.div>
               <h3 className="text-base sm:text-lg font-body font-semibold text-white mb-2">
                 {title}
               </h3>
