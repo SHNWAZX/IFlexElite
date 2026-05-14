@@ -10,7 +10,11 @@
 [![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 
-**[ Live Demo ↗](https://github.com/IFlexElite)** · **[Twitter ↗](https://x.com/IFlexElite)** · **[Instagram ↗](https://instagram.com/iflexelite)**
+**[ Repo ↗](https://github.com/IFlexElite/IFlexElite)** · **[Twitter ↗](https://x.com/IFlexElite)** · **[Instagram ↗](https://instagram.com/iflexelite)**
+
+![Repo](https://img.shields.io/badge/repo-IFlexElite%2FIFlexElite-181717?style=flat-square&logo=github)
+![Stars](https://img.shields.io/github/stars/IFlexElite/IFlexElite?style=flat-square&logo=github)
+![License](https://img.shields.io/badge/license-MIT-22c55e?style=flat-square)
 
 </div>
 
@@ -44,6 +48,10 @@ ambient audio that fades in as you scroll.
 ## ⚡ Quick start
 
 ```bash
+# clone
+git clone https://github.com/IFlexElite/IFlexElite.git
+cd IFlexElite
+
 # install
 bun install
 
@@ -129,7 +137,7 @@ src/
 
 ## 📜 License
 
-MIT © **[IFlexElite](https://github.com/IFlexElite)**
+MIT © **[IFlexElite](https://github.com/IFlexElite/IFlexElite)**
 
 <div align="center">
 
