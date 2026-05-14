@@ -30,6 +30,7 @@ export function HlsVideo({ src, className, style }: Props) {
       loop
       muted
       playsInline
+      preload="metadata"
       className={className}
       style={style}
     />
