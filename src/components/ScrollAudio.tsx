@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   src: string;
@@ -8,8 +8,14 @@ interface Props {
 
 export default function ScrollAudio({ src, targetId, volume = 0.45 }: Props) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const audio = audioRef.current;
     const target = document.getElementById(targetId);
     if (!audio || !target) return;
@@ -74,7 +80,9 @@ export default function ScrollAudio({ src, targetId, volume = 0.45 }: Props) {
       window.removeEventListener("scroll", onInteract);
       audio.pause();
     };
-  }, [targetId, volume]);
+  }, [targetId, volume, mounted]);
+
+  if (!mounted) return null;
 
   return (
     <audio
