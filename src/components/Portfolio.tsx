@@ -44,12 +44,6 @@ function Nav() {
     >
       <div className="px-5 sm:px-8 lg:px-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <img
-            src="/logo-e.png"
-            alt="IFlexElite logo"
-            draggable={false}
-            className="w-8 h-8 object-contain"
-          />
           <span className="font-heading italic text-white text-base sm:text-lg">
             IFlexElite
           </span>
