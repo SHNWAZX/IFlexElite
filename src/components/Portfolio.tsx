@@ -16,6 +16,7 @@ import HlsVideo from "./HlsVideo";
 import BlurText from "./BlurText";
 import AnimatedCursor from "./AnimatedCursor";
 import CopyGuard from "./CopyGuard";
+import ScrollAudio from "./ScrollAudio";
 
 const NAV = [
   { id: "work", label: "Work" },
@@ -473,7 +474,7 @@ const TESTIMONIALS = [
 
 function Testimonials() {
   return (
-    <section className="relative bg-black py-20 sm:py-28 px-5 sm:px-8 lg:px-16">
+    <section id="testimonials" className="relative bg-black py-20 sm:py-28 px-5 sm:px-8 lg:px-16">
       <motion.span
         initial={{ opacity: 0, x: -15 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -709,6 +710,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-black text-white font-body antialiased">
       <AnimatedCursor />
       <CopyGuard />
+      <ScrollAudio src="/ambient.m4a" targetId="testimonials" />
       <Nav />
       <main>
         <Hero />
