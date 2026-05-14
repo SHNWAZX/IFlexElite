@@ -41,7 +41,8 @@ export default function ScrollAudio({ src, targetId, volume = 0.45 }: Props) {
       const startTime = performance.now();
       const step = (now: number) => {
         const t = Math.min(1, (now - startTime) / duration);
-        audio.volume = start + (target - start) * t;
+        const v = start + (target - start) * t;
+        audio.volume = Math.max(0, Math.min(1, v));
         if (t < 1) requestAnimationFrame(step);
         else if (target === 0) audio.pause();
       };
