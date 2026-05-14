@@ -222,7 +222,7 @@
 
 html.custom-cursor,
 html.custom-cursor * {
-  cursor: none !important;
+  cursor: url('/cursor.cur'), auto !important;
 }
 
 html, body {
