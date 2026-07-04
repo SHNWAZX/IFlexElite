@@ -594,7 +594,7 @@ function Contact() {
             className="flex items-center gap-3 flex-wrap"
           >
             <a
-              href="https://github.com/IFlexElite"
+              href="https://github.com/shnwazdeveloper"
               target="_blank"
               rel="noreferrer"
               className="bg-white text-black rounded-full px-5 py-3 text-sm font-body font-semibold inline-flex items-center gap-2"
@@ -602,7 +602,7 @@ function Contact() {
               Start a project <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
-              href="https://github.com/IFlexElite"
+              href="https://github.com/shnwazdeveloper"
               target="_blank"
               rel="noreferrer"
               className="liquid-glass-strong rounded-full px-5 py-3 text-sm font-body font-medium text-white inline-flex items-center gap-2"
@@ -636,35 +636,35 @@ function Contact() {
           </div>
           <div className="space-y-3">
             <a
-              href="https://github.com/IFlexElite"
+              href="https://github.com/shnwazdeveloper"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Github className="w-4 h-4" /> github.com/IFlexElite
+                <Github className="w-4 h-4" /> github.com/shnwazdeveloper
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://x.com/IFlexElite"
+              href="https://t.me/sexyafraid"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Twitter className="w-4 h-4" /> @IFlexElite
+                <Twitter className="w-4 h-4" /> @sexyafraid
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://instagram.com/iflexelite"
+              href="https://instagram.com/sexyshnwaz"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Instagram className="w-4 h-4" /> @iflexelite
+                <Instagram className="w-4 h-4" /> @sexyshnwaz
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
@@ -686,23 +686,23 @@ function Footer() {
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <span className="text-white/30 text-xs font-body">
-          © 2026 IFlexElite. All rights reserved.
+          © 2026 ShnwazDev. All rights reserved.
         </span>
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/IFlexElite"
+            href="https://github.com/shnwazdeveloper"
             className="text-white/40 hover:text-white text-xs font-body"
           >
             GitHub
           </a>
           <a
-            href="https://x.com/IFlexElite"
+            href="https://t.me/sexyafraid"
             className="text-white/40 hover:text-white text-xs font-body"
           >
             X
           </a>
           <a
-            href="https://instagram.com/iflexelite"
+            href="https://instagram.com/sexyshnwaz"
             className="text-white/40 hover:text-white text-xs font-body"
           >
             Instagram
