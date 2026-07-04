@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✦ IFlexElite ✦
+# ✦ ShnwazDev ✦
 
 ### *Crafting interfaces that feel inevitable.*
 
@@ -10,10 +10,10 @@
 [![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
 
-**[ Repo ↗](https://github.com/IFlexElite/IFlexElite)** · **[Twitter ↗](https://x.com/IFlexElite)** · **[Instagram ↗](https://instagram.com/iflexelite)**
+**[ Repo ↗](https://github.com/shnwazdeveloper/shnwazdev-portfolio)** · **[Telegram ↗](https://t.me/sexyafraid)** · **[Instagram ↗](https://instagram.com/shnwazdev)**
 
-![Repo](https://img.shields.io/badge/repo-IFlexElite%2FIFlexElite-181717?style=flat-square&logo=github)
-![Stars](https://img.shields.io/github/stars/IFlexElite/IFlexElite?style=flat-square&logo=github)
+![Repo](https://img.shields.io/badge/repo-ShnwazDev%2FShnwazDev-181717?style=flat-square&logo=github)
+![Stars](https://img.shields.io/github/stars/shnwazdeveloper/shnwazdev-portfolio?style=flat-square&logo=github)
 ![License](https://img.shields.io/badge/license-MIT-22c55e?style=flat-square)
 
 </div>
@@ -22,7 +22,7 @@
 
 ## ◆ About
 
-A high-end personal portfolio for **IFlexElite** — independent web developer & UX strategist.
+A high-end personal portfolio for **ShnwazDev** — independent web developer & UX strategist.
 Built around editorial typography, liquid-glass surfaces, motion-rich storytelling, and
 ambient audio that fades in as you scroll.
 
@@ -49,8 +49,8 @@ ambient audio that fades in as you scroll.
 
 ```bash
 # clone
-git clone https://github.com/IFlexElite/IFlexElite.git
-cd IFlexElite
+git clone https://github.com/shnwazdeveloper/shnwazdev-portfolio.git
+cd ShnwazDev
 
 # install
 bun install
@@ -137,7 +137,7 @@ src/
 
 ## 📜 License
 
-MIT © **[IFlexElite](https://github.com/IFlexElite/IFlexElite)**
+MIT © **[ShnwazDev](https://github.com/shnwazdeveloper/shnwazdev-portfolio)**
 
 <div align="center">
 

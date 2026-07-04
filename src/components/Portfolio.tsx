@@ -4,7 +4,7 @@ import {
   ArrowUpRight,
   Github,
   Instagram,
-  Twitter,
+  Send,
   Zap,
   Palette,
   BarChart3,
@@ -43,10 +43,12 @@ function Nav() {
       }`}
     >
       <div className="px-5 sm:px-8 lg:px-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="font-heading italic text-white text-base sm:text-lg">
-            IFlexElite
-          </span>
+        <a href="#top" className="flex items-center gap-2" aria-label="ShnwazDev">
+          <img
+            src="https://avatars.githubusercontent.com/u/271950542?v=4"
+            alt="ShnwazDev"
+            className="w-9 h-9 rounded-full ring-1 ring-white/20 object-cover"
+          />
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
@@ -142,8 +144,9 @@ function Hero() {
           transition={{ delay: 0.9 }}
           className="text-sm sm:text-base lg:text-lg text-white/55 font-body font-light leading-relaxed max-w-xl mb-8"
         >
-          I'm <span className="text-white">IFlexElite</span> — a web developer & UX
-          strategist building fast, beautiful, conversion-focused experiences.
+          I'm <span className="text-white">ShnwazDev</span> — a web developer & UI/UX
+          designer building fast, beautiful, conversion-focused experiences. Founder
+          of <span className="text-white">Saya Project</span>.
         </motion.p>
 
         <motion.div
@@ -153,7 +156,7 @@ function Hero() {
           className="flex items-center gap-3 flex-wrap"
         >
           <a
-            href="https://github.com/IFlexElite?tab=repositories"
+            href="https://github.com/shnwazdeveloper?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-black rounded-full px-5 py-3 text-sm font-body font-semibold inline-flex items-center gap-2"
@@ -174,31 +177,35 @@ function Hero() {
 
 const PROJECTS = [
   {
-    title: "Designed to convert. Built to perform.",
-    body: "Landing experience for a SaaS platform — every pixel tuned for clarity and momentum.",
-    tag: "Web Design",
+    title: "SayaMusic",
+    body: "Modern music streaming client for the Saya Project ecosystem — built in TypeScript with fast search, previews, and legal metadata.",
+    tag: "TypeScript · Web",
+    href: "https://github.com/SayaProject/SayaMusic",
     videoSrc:
       "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260302_085844_21a8f4b3-dea5-4ede-be16-d53f6973bb14.mp4",
     hls: false,
   },
   {
-    title: "Smart UX, automatically.",
-    body: "Real-time UX system that learns from every click, scroll, and conversion to optimize itself.",
-    tag: "Product · UX",
+    title: "Saya Music Bot",
+    body: "Advanced Telegram voice-chat music bot with multi-source streaming, low-latency playback, and one-click Railway deployment.",
+    tag: "Python · Telegram",
+    href: "https://github.com/SayaProject/saya-music",
     videoSrc: "https://stream.mux.com/T6oQJQ02cQ6N01TR6iHwZkKFkbepS34dkkIc9iukgy400g.m3u8",
     hls: true,
   },
   {
-    title: "Brand systems that scale.",
-    body: "Visual identity & motion language built to grow with the brand across every surface.",
-    tag: "Brand · Motion",
+    title: "Saya Music API",
+    body: "Cloudflare Workers API for legal music search, metadata, previews, artwork and open streams. Edge-fast, globally deployed.",
+    tag: "TypeScript · Edge",
+    href: "https://github.com/shnwazdeveloper/sayamusicapi",
     videoSrc: "https://stream.mux.com/9JXDljEVWYwWu01PUkAemafDugK89o01BR6zqJ3aS9u00A.m3u8",
     hls: true,
   },
   {
-    title: "Editorial-grade interfaces.",
-    body: "Magazine-style storytelling layouts engineered for performance and accessibility.",
-    tag: "Editorial",
+    title: "SayaRobot",
+    body: "Telegram group-management bot built with Pyrogram, MongoDB and Gemini AI — Railway-ready, packed with moderation tools.",
+    tag: "Python · AI",
+    href: "https://github.com/SayaProject/sayarobot",
     videoSrc: "https://stream.mux.com/s8pMcOvMQXc4GD6AX4e1o01xFogFxipmuKltNfSYza0200.m3u8",
     hls: true,
   },
@@ -232,7 +239,7 @@ function Work() {
           </motion.h2>
         </div>
         <a
-          href="https://github.com/IFlexElite"
+          href="https://github.com/shnwazdeveloper"
           target="_blank"
           rel="noreferrer"
           className="hidden sm:inline-flex liquid-glass-strong rounded-full px-4 py-2 items-center gap-1.5 text-white text-xs font-body"
@@ -243,7 +250,10 @@ function Work() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
         {PROJECTS.map((p, i) => (
-          <motion.article
+          <motion.a
+            href={p.href}
+            target="_blank"
+            rel="noreferrer"
             key={p.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -281,13 +291,13 @@ function Work() {
               </p>
               <div className="mt-5 inline-flex items-center gap-1.5 text-white/70 text-xs font-body tracking-wider uppercase relative w-fit">
                 <span className="relative">
-                  Skills
+                  View repo
                   <span className="absolute left-0 -bottom-0.5 h-px w-full bg-white/70 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
                 </span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" />
               </div>
             </div>
-          </motion.article>
+          </motion.a>
         ))}
       </div>
     </section>
@@ -418,7 +428,7 @@ function Stats() {
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           className="text-3xl sm:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.95] mb-10 max-w-3xl"
         >
-          Independent designer & developer with a bias for craft and speed.
+          About ShnwazDev — independent developer with a bias for craft and speed.
         </motion.h2>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
@@ -584,7 +594,7 @@ function Contact() {
             className="flex items-center gap-3 flex-wrap"
           >
             <a
-              href="https://github.com/IFlexElite"
+              href="https://github.com/shnwazdeveloper"
               target="_blank"
               rel="noreferrer"
               className="bg-white text-black rounded-full px-5 py-3 text-sm font-body font-semibold inline-flex items-center gap-2"
@@ -592,7 +602,7 @@ function Contact() {
               Start a project <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
-              href="https://github.com/IFlexElite"
+              href="https://github.com/shnwazdeveloper"
               target="_blank"
               rel="noreferrer"
               className="liquid-glass-strong rounded-full px-5 py-3 text-sm font-body font-medium text-white inline-flex items-center gap-2"
@@ -611,50 +621,50 @@ function Contact() {
         >
           <div className="flex items-center gap-3 mb-6">
             <img
-              src="https://avatars.githubusercontent.com/u/190835907?v=4"
-              alt="IFlexElite"
+              src="https://avatars.githubusercontent.com/u/271950542?v=4"
+              alt="ShnwazDev"
               className="w-12 h-12 rounded-full object-cover ring-1 ring-white/20"
             />
             <div>
               <div className="text-white font-body text-sm font-medium">
-                IFlexElite
+                ShnwazDev
               </div>
               <div className="text-white/40 text-[11px] font-body">
-                Web Developer & UX Strategist
+                Web Developer & UI/UX Designer · Saya Project
               </div>
             </div>
           </div>
           <div className="space-y-3">
             <a
-              href="https://github.com/IFlexElite"
+              href="https://github.com/shnwazdeveloper"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Github className="w-4 h-4" /> github.com/IFlexElite
+                <Github className="w-4 h-4" /> github.com/shnwazdeveloper
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://x.com/IFlexElite"
+              href="https://t.me/sexyafraid"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Twitter className="w-4 h-4" /> @IFlexElite
+                <Send className="w-4 h-4" /> @sexyafraid
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://instagram.com/iflexelite"
+              href="https://instagram.com/sexyshnwaz"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Instagram className="w-4 h-4" /> @iflexelite
+                <Instagram className="w-4 h-4" /> @sexyshnwaz
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
@@ -676,23 +686,23 @@ function Footer() {
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <span className="text-white/30 text-xs font-body">
-          © 2026 IFlexElite. All rights reserved.
+          © 2026 ShnwazDev. All rights reserved.
         </span>
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/IFlexElite"
+            href="https://github.com/shnwazdeveloper"
             className="text-white/40 hover:text-white text-xs font-body"
           >
             GitHub
           </a>
           <a
-            href="https://x.com/IFlexElite"
+            href="https://t.me/sexyafraid"
             className="text-white/40 hover:text-white text-xs font-body"
           >
-            X
+            Telegram
           </a>
           <a
-            href="https://instagram.com/iflexelite"
+            href="https://instagram.com/sexyshnwaz"
             className="text-white/40 hover:text-white text-xs font-body"
           >
             Instagram

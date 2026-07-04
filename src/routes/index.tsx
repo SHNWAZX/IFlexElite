@@ -5,13 +5,13 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "IFlexElite — Web Developer & UX Strategist" },
+      { title: "ShnwazDev — Web Developer & UI/UX Designer" },
       {
         name: "description",
         content:
-          "IFlexElite — independent web developer & UX strategist crafting fast, beautiful, conversion-focused websites.",
+          "ShnwazDev — web developer & UI/UX designer, founder of Saya Project. Building fast, beautiful, conversion-focused web and Telegram products.",
       },
-      { property: "og:title", content: "IFlexElite — Portfolio" },
+      { property: "og:title", content: "ShnwazDev — Portfolio" },
       {
         property: "og:description",
         content: "Crafting interfaces that feel inevitable.",
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       {
         property: "og:image",
-        content: "https://avatars.githubusercontent.com/u/190835907?v=4",
+        content: "https://avatars.githubusercontent.com/u/271950542?v=4",
       },
     ],
   }),
