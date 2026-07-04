@@ -43,12 +43,15 @@ function Nav() {
       }`}
     >
       <div className="px-5 sm:px-8 lg:px-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2" aria-label="ShnwazDev">
+        <a href="#top" className="flex items-center gap-2.5" aria-label="ShnwazDev">
           <img
             src="https://avatars.githubusercontent.com/u/271950542?v=4"
             alt="ShnwazDev"
             className="w-9 h-9 rounded-full ring-1 ring-white/20 object-cover"
           />
+          <span className="font-heading italic text-white text-base sm:text-lg tracking-tight">
+            ShnwazDev
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
@@ -62,7 +65,9 @@ function Nav() {
           ))}
         </nav>
         <a
-          href="#contact"
+          href="https://shnwaz.com"
+          target="_blank"
+          rel="noreferrer"
           className="hidden md:inline-flex liquid-glass-strong rounded-full px-4 py-2 items-center gap-1.5 text-white text-xs font-body font-medium"
         >
           Hire me <ArrowUpRight className="w-3.5 h-3.5" />
@@ -92,7 +97,9 @@ function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://shnwaz.com"
+            target="_blank"
+            rel="noreferrer"
             onClick={() => setOpen(false)}
             className="bg-white text-black rounded-full px-4 py-2.5 text-xs font-body font-semibold inline-flex items-center justify-center gap-1.5"
           >
