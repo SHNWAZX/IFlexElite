@@ -621,16 +621,16 @@ function Contact() {
         >
           <div className="flex items-center gap-3 mb-6">
             <img
-              src="https://avatars.githubusercontent.com/u/190835907?v=4"
-              alt="IFlexElite"
+              src="https://avatars.githubusercontent.com/u/271950542?v=4"
+              alt="ShnwazDev"
               className="w-12 h-12 rounded-full object-cover ring-1 ring-white/20"
             />
             <div>
               <div className="text-white font-body text-sm font-medium">
-                IFlexElite
+                ShnwazDev
               </div>
               <div className="text-white/40 text-[11px] font-body">
-                Web Developer & UX Strategist
+                Web Developer & UI/UX Designer · Saya Project
               </div>
             </div>
           </div>
@@ -653,7 +653,7 @@ function Contact() {
               className="flex items-center justify-between gap-3 text-white/70 hover:text-white text-sm font-body transition border-t border-white/10 pt-3"
             >
               <span className="inline-flex items-center gap-2.5">
-                <Twitter className="w-4 h-4" /> @sexyafraid
+                <Send className="w-4 h-4" /> @sexyafraid
               </span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
