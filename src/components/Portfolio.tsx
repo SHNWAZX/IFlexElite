@@ -699,7 +699,7 @@ function Footer() {
             href="https://t.me/sexyafraid"
             className="text-white/40 hover:text-white text-xs font-body"
           >
-            X
+            Telegram
           </a>
           <a
             href="https://instagram.com/sexyshnwaz"
