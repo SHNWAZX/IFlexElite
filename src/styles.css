@@ -231,6 +231,9 @@ html, body {
   user-select: none;
   -webkit-touch-callout: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 input, textarea, [contenteditable="true"] {
   -webkit-user-select: text;
   user-select: text;
